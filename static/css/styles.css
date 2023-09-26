@@ -1,0 +1,132 @@
+*, *::before, *::after {
+    box-sizing: border-box;
+    user-select: none;
+}
+
+body, html {
+    margin: 0;
+    padding-top: 2vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    overflow: hidden;
+    background: #ffefd5;
+    z-index: -5;
+}
+
+.player-name {
+    border-radius: 5vmin;
+    text-align: center;
+    padding: 1vmin 5vmin;
+    font-weight: revert;
+}
+
+.submit-button {
+    padding: 1vmin;
+    margin-top: 2vmin;
+    background: #6a8e1c;
+    color: white;
+    font-weight: bold;
+    border-radius: 1vmin;
+}
+
+.submit-button:hover {
+    font-weight: bolder;
+    background: #3b5404;
+    cursor: pointer;
+}
+
+.game-container {
+    font-family: "Comic Sans MS", sans-serif;
+    color: white;
+    display: flex;
+    width: 90vw;
+    border: 1vmin solid black;
+    border-radius: 1vmin;
+}
+
+.world {
+    overflow: hidden;
+    position: relative;
+}
+
+.score-track {
+    position: absolute;
+    font-size: 3vmin;
+    right: 1vmin;
+    top: 1vmin;
+    z-index: 1;
+}
+
+.start-text {
+    position: absolute;
+    font-size: 5vmin;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 3;
+}
+
+.show {
+    display: block;
+}
+
+.hide {
+    display: none;
+}
+
+.forest {
+    --left: 0;
+    position: absolute;
+    width: 300%;
+    height: 100%;
+    bottom: 0;
+    left: calc(var(--left) * 1%);
+    z-index: -1;
+}
+
+.naruto {
+    --bottom: 0;
+    position: absolute;
+    left: 1%;
+    height: 30%;
+    bottom: calc(var(--bottom) * 1%);
+}
+
+.fire {
+    position: absolute;
+    left: calc(var(--left) * 1%);
+    height: 25%;
+    bottom: 0;
+}
+
+.high-score {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    position: fixed;
+    top: 100vh;
+    transform: translateY(-100%);
+    border: 1px solid black;
+    border-radius: 1vmin;
+    padding-bottom: 5px;
+    text-align: center;
+}
+
+span{
+    font-weight: bolder
+}
+
+.score-table {
+    padding: 1px;
+    margin-bottom: 3px;
+    border-radius: 2px;
+    border: 1px solid black;
+}
+
+td, th{
+    text-align: center;
+    padding: 2px;
+    border-radius: 2px;
+    border: 1px solid black;
+
+}

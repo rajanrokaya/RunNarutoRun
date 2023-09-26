@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="scaffolded-by" content="https://github.com/google/stagehand">
+    <title>Run Naruto Run</title>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="{{url_for('static', filename='css/styles.css')}}">
+
+    <!-- Custom JavaScript -->
+    <script src="{{ url_for('static', filename='js/fire.js') }}" type="module"></script>
+    <script src="{{ url_for('static', filename='js/naruto.js') }}" type="module"></script>
+    <script src="{{ url_for('static', filename='js/script.js') }}" type="module"></script>
+    <script src="{{ url_for('static', filename='js/property.js') }}" type="module"></script>
+    <script src="{{ url_for('static', filename='js/forest.js') }}" type="module"></script>
+</head>
+
+<body>
+<!-- Game Container -->
+<div class="game-container" data-game>
+    <div class="world" data-world>
+        <div class="score-track">
+            <div class="score">Score</div>
+            <div class="point" data-score>0</div>
+        </div>
+        <h1 class="start-text" data-start-text>Press "SPACE" To Jump</h1>
+        <img src="{{url_for('static', filename='images/background.png')}}" class="forest" data-forest>
+        <img src="{{url_for('static', filename='images/background.png')}}" class="forest" data-forest>
+        <img src="{{url_for('static', filename='images/start-position.png')}}" class="naruto" data-naruto>
+    </div>
+</div>
+
+<!-- Leaderboard Container-->
+<div class="high-score" id="highScore" data-leaderboard>
+    <div><span>Leaderboard</span></div>
+    <div class="table-container">
+        <table id="score-table">
+            <tr>
+                <th class="scorer-rank">Rank</th>
+                <th class="scorer-name">Name of Player</th>
+                <th class="scorer-score">Highest Score</th>
+                <th class="scorer-time">Date & Time</th>
+            </tr>
+            {% for highscore in highscores %}
+            <tr>
+                <td>{{ highscore[0] }}</td>
+                <td>{{ highscore[1] }}</td>
+                <td>{{ highscore[2] }}</td>
+                <td>{{ highscore[3] }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+</div>
+
+</body>
+</html>
